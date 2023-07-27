@@ -1,0 +1,23 @@
+<div class="side-bar text-center m-10 p-10">
+  <div class="p-5">
+    <img class="w-24 h-24 rounded-lg align-item-center"
+      src="https://cdn.dribbble.com/users/76502/screenshots/16131905/media/01913dea017c9335ae8dfb33457c2693.png"
+      alt="" />
+  </div>
+  <div class="title mt-1">
+    <h1 class="text-2xl font-bold mb-1">ASHIK CH</h1>
+    <h1 class="title2 border rounded-lg py-2 text-xs">Web Developer | Designer</h1>
+  </div>
+
+  <div class="mt-10">
+    <div class="outericons h-auto rounded-lg" *ngFor="let net of network">
+      <div class="icons text-left  mt-2">
+        <i class="{{net.icon}}"> </i>
+        <div class="ml-2">
+          <h1>{{net.title}}</h1>
+          <h3>{{net.id}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

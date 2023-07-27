@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --divColor: #cecece;
+  --bodyColor: #ffffff;
+  --text-color: #111827;
+  --text-color2: #111827;
+  --text-header1: #5c4d03;
+  --text-header3: rgb(75, 75, 1);
+  --invert-color1: #252525;
+  --invert-color2: #000000;
+  --border-color: #a0aec0;
+}
+
+.dark-mode {
+  --divColor: #252525;
+  --bodyColor: #000000;
+  --text-color: #fff;
+  --text-header1: #eab308;
+  --text-header3: rgb(250, 250, 158);
+  --invert-color1: #cecece;
+  --invert-color2: #ffffff;
+  --text-color2: #ffffff;
+  --border-color: #fff;
+}
+
+body {
+  background-color: var(--bodyColor);
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
+
+  .header1 {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--text-header1);
+    margin-top: -42px;
+  }
+
+  .header2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-text);
+  }
+  .header3 {
+    color: var(--text-header3);
+    font-size: 20px;
+    font-weight: 900;
+  }
+}

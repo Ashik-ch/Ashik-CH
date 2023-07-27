@@ -1,0 +1,26 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.navbar {
+  height: auto;
+  box-shadow: -1px 1px 1px -0.5px rgba(156, 155, 155, 0.8);
+  padding: 17px;
+  background-color: var(--divColor);
+  border-radius: 0 25px 0 25px;
+}
+
+.navbar .items {
+  margin: 0 25px;
+  font-weight: bold;
+}
+
+.active-link {
+  color: var(--text-header1);
+}

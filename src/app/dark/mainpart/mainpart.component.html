@@ -1,0 +1,153 @@
+<div class="main-part">
+
+  <!-- Day-mode and Nav-bar -->
+  <div class="toggles" style="display: flex; justify-content: space-between;">
+    <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
+    <label for="darkmode-toggle">
+      <div class="toggle-icon">
+        <i class="fa-solid fa-moon fa-sm"></i>
+        <i class="far fa-sun fa-xs"></i>
+      </div>
+    </label>
+    <div class="flex justify-end">
+      <app-nav (clickValue)="showDiv($event)"></app-nav>
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <section *ngIf="openDiv == 'Home'" class="home">
+    <div class="header1 font-bold">Home</div>
+    <div class="line mb-[3rem] "></div>
+
+    <div class="flex flex-col">
+      <div class="header2 font-bold mb-2">About me</div>
+      <div class="subheader1 pr-14 ">{{ aboutMe }} </div>
+
+      <div class="buttons">
+        <button class="button" (click)="contact('Contact')">
+          <div class="">Contact Me</div>
+        </button>
+        <button class="button" (click)="contact('Contact')">
+          <div> Hire Me</div>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESUME -->
+  <section class="resume" *ngIf="openDiv == 'Resume'">
+    <div class="header1 font-bold">Resume</div>
+    <div class="line mb-[3rem] "></div>
+    <div class="grid grid-cols-2 mt-[2.75rem]">
+
+      <!-- Experince & Education -->
+      <div *ngFor="let data of data">
+        <h1 class="header2 font-bold my-2">{{data.main}}</h1>
+        <div class="grid grid-cols-[auto,1fr]">
+          <div class="ver-lines"> </div>
+          <div class="qualif">
+            <div class="flex flex-col mt-5" *ngFor="let list of data.items">
+              <div class="flex items-center">
+                <div class="dots"></div>
+                <div class="hor-lines inline-block mr-4"></div>
+                <div class="title-text text-lg font-bold title">{{list.title}}</div>
+              </div>
+              <div class="sub-title ">{{list.subtit[0]}}</div>
+              <div class="sub-title ">{{list.subtit[1]}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL -->
+    <div class="skills flex flex-col border border-base rounded rounded-xl mr-4 p-4 mt-8">
+      <div class="header2 mb-4"> Skill</div>
+      <div class="flex skill-set ">
+        <div *ngFor="let s of skill" (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
+          <h1 class="skill-title">{{ s.title }}</h1>
+          <div class="progress-bar" [style.width]="s.skillWidth"
+            [style.visibility]="showProgressBar === s ? 'visible' : 'hidden'">
+            <!-- {{ s.skillWidth }} -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO  -->
+  <section *ngIf="openDiv == 'Portfolio'">
+    <h1 class="header1 font-bold ">PortFolio</h1>
+    <div class="line mb-[3rem] "></div>
+    <div class="flex flex-col gap-5 my-4" *ngFor="let p of project">
+      <div class="flex gap-4">
+        <img class="portfolio-img  border  border-sm rounded-xl" [src]="p.img" alt="img" />
+        <div class="portfolio-desc border border-base p-2">
+          <h1 class="header3">{{p.title}}</h1>
+          <h3 class="text-base font-thin">{{p.subtitle}}</h3>
+          <h5 class="text-sm"> {{p.describtion}} </h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT  -->
+  <section *ngIf="openDiv == 'Contact'">
+    <h1 class="header1 font-bold ">Contact</h1>
+    <div class="line mb-[3rem] "></div>
+
+    <div class="grid grid-cols-2">
+      <!-- Send a Message -->
+      <div>
+        <div class="header2">Send a message</div>
+        <div class="mt-5">
+          <label for=" first_name" class="block mb-2  text-sm font-medium ">Name</label>
+          <input type="text" id="first_name" class="message-field w-full " placeholder="Name" required>
+        </div>
+        <div class="mt-4">
+          <label for="last_name" class="block mb-2 text-sm font-medium ">Email</label>
+          <input type="text" id="email" class="message-field  w-full " placeholder="Email" required>
+        </div>
+        <div class="mt-4">
+          <label for="last_name" class="block mb-2 text-sm font-medium ">Message</label>
+          <textarea type="text-area " style="height: 156px;" class="message-field  w-full " placeholder="Message"
+            required></textarea>
+        </div>
+
+        <div class="mt-5">
+          <button type="button"
+            class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
+            Cancel
+          </button>
+          <button type="button"
+            class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
+            Send
+          </button>
+        </div>
+      </div>
+
+      <!-- Get in touch  -->
+      <div class="px-20">
+        <div class="header2 mb-8"> Get in touch </div>
+        <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
+        <div class="ml-5"> +91 9645937117</div>
+        <i class="fa fa-light fa-location-dot mt-3 mr-2"></i> <span>Address: </span>
+        <div class="ml-6 w-3/5"> Vadakke Poyiloor,Kannur, Kerala -670693. </div>
+        <i class="fa-sharp fa-regular fa-envelope mt-3 mr-2"></i> <span>Email: </span>
+        <div class="ml-6 w-3/5">ashikch7117@gmail.com </div>
+
+        <div class="flex gap-3">
+          <div class="mt-10" *ngFor="let icon of icons" style="font-size: 10px;">
+            <a [href]="icon.url"><i class="{{icon.icon}}"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
