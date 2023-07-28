@@ -1,0 +1,23 @@
+<div class="main-part">
+    <i (click)="goBack()" class="fa-solid fa-arrow-left fa-2xl m-16"></i>
+
+    <div class="flex flex-col justify-center h-auto">
+        <div
+            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white ">
+            <div class=" md:w-1/3  grid place-items-center">
+                <img src="{{projectItem.img}}" alt="tailwind logo" class="img-fit rounded-xl max-w-full" />
+            </div>
+            <div class="w-full md:w-2/3 flex flex-col space-y-2 p-3">
+                <h3 class="font-black md:text-3xl text-xl"> {{projectItem.title}}</h3>
+                <p class=" font-medium hidden md:block">{{projectItem.subtitle}}</p>
+                <p class="md:text-lg  text-base">{{projectItem.describtion}}</p>
+                <p class="text-base font-black ">
+                    Technologies Used:
+                    <span class="font-normal  text-base">{{projectItem.technology}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>

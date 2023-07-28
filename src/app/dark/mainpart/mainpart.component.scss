@@ -7,11 +7,11 @@
   margin-left: 42px;
   padding: 0 0 79px 58px;
   border: 1px solid var(--border-color);
-  overflow-x: hidden;
+  overflow-x: auto;
   margin-right: 25px;
 
   .main-part::-webkit-scrollbar {
-    width: 0.1em;
+    width: 0.1px;
   }
 
   .main-part::-webkit-scrollbar-thumb {
