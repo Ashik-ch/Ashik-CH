@@ -83,17 +83,18 @@
   <section *ngIf="openDiv == 'Portfolio'">
     <h1 class="header1 font-bold">PortFolio</h1>
     <div class="line mb-[3rem]"></div>
-    <div class="flex flex-col my-4 " style="padding: 0 44px 0px 0px;" *ngFor="let p of project; let i = index">
-      <a routerLink="project/{{p.id}}">
-        <div class="flex gap-12" [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
-          <img class="portfolio-img border border-sm rounded-xl" [src]="p.img" alt="img" />
-          <div class="portfolio-desc border border-base p-2">
-            <h1 class="header3">{{p.title}}</h1>
-            <h3 class="text-base font-thin">{{p.subtitle}}</h3>
-            <h5 class="text-sm"> {{p.describtion}} </h5>
-          </div>
+    <div class="  flex flex-col my-4 " style="padding: 0 44px 0px 0px;" *ngFor="let p of project; let i = index">
+
+      <div class="flex gap-12" [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
+        <img routerLink="project/{{p.id}}" class="project-item portfolio-img border border-sm rounded-xl" [src]="p.img"
+          alt="img" />
+        <div routerLink="project/{{p.id}}" class="project-item portfolio-desc border border-base p-2">
+          <h1 class="header3">{{p.title}}</h1>
+          <h3 class="text-base font-thin">{{p.subtitle}}</h3>
+          <h5 class="text-sm"> {{p.describtion}} </h5>
         </div>
-      </a>
+      </div>
+
     </div>
   </section>
 
@@ -133,7 +134,7 @@
       </section>
 
       <!-- Get in touch  -->
-      <section class="px-20">
+      <section class="pl-20 pr-4">
         <div class="header2 mb-8"> Get in touch </div>
         <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
         <div class="ml-5"> +91 9645937117</div>

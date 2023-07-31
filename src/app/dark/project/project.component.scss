@@ -32,3 +32,10 @@
   width: 237px;
   object-fit: cover;
 }
+
+.project-item {
+  transition: transform 0.7s ease;
+}
+.project-item:hover {
+  transform: scale(1.15);
+}

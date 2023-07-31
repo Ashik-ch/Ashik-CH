@@ -1,14 +1,13 @@
 .main-part {
   width: 940px;
-  height: 680px;
+  min-height: 716px;
   background-color: var(--divColor);
   margin-top: 40px;
   border-radius: 27px;
-  margin-left: 42px;
   padding: 0 0 79px 58px;
   border: 1px solid var(--border-color);
   overflow-x: auto;
-  margin-right: 25px;
+  margin-bottom: 44px;
 
   .main-part::-webkit-scrollbar {
     width: 0.1px;
@@ -193,6 +192,17 @@
   display: none;
 }
 
+.project-item {
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.project-item:hover {
+  transform: scale(1.05);
+  color: var(--text-header3);
+}
+
+.header3:hover {
+}
 // Contact
 .message-field {
   border: 1px solid var(--border-color);

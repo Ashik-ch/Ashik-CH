@@ -1,12 +1,13 @@
 .side-bar {
-  width: 250px;
-  padding: 10px;
-  height: 680px;
   align-items: center;
   text-align: -webkit-center;
   background-color: var(--divColor);
   border: 1px solid var(--border-color);
-  border-radius: 45px;
+  border-radius: 32px;
+  position: sticky;
+  top: 42px;
+  margin-bottom: 44px;
+  height: 716px;
 }
 
 .title2 {
