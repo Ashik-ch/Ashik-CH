@@ -6,43 +6,46 @@
   border-radius: 32px;
   position: sticky;
   top: 42px;
-  margin-bottom: 44px;
+
   height: 716px;
+  width: auto;
 }
 
 .title2 {
-  width: 186px;
   border: 1px solid rgb(188, 190, 165);
 }
 
-.outericons {
-  width: 200px;
-}
-
-.icons {
-  padding: 7px 10px;
-  box-shadow: 0px 1px 6px -0.5px rgb(132 132 132);
-  width: 186px;
-  height: auto;
-  margin: 21px 0;
-  border-radius: 10px;
+.network {
+  gap: 14px;
+  flex-direction: column;
   display: flex;
-}
+  width: 180px;
 
-.icons h1 {
-  font-size: 12px;
-  font-weight: 500;
-}
+  .icons {
+    padding: 7px 10px;
+    box-shadow: 0px 1px 6px -0.5px rgb(132 132 132);
 
-.icons h3 {
-  font-size: 11px;
-  margin-top: -4px;
-  margin-left: 0px;
-  font-weight: 300;
-  font-family: system-ui;
-}
+    height: auto;
 
-.outericons i {
-  margin-top: 18px;
-  font-size: 29px;
+    border-radius: 10px;
+    display: flex;
+  }
+
+  .icons h1 {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .icons h3 {
+    font-size: 11px;
+    margin-top: -4px;
+    margin-left: 0px;
+    font-weight: 300;
+    font-family: system-ui;
+  }
+
+  .outericons i {
+    margin-top: 17px;
+    font-size: 25px;
+  }
 }

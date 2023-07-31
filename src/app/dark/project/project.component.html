@@ -1,9 +1,8 @@
 <div class="main-part">
-    <i (click)="goBack()" class="fa-solid fa-arrow-left fa-2xl m-16"></i>
+    <i (click)="goBack()" class="fa-solid fa-arrow-left fa-2xl mt-16"></i>
 
     <div class="flex flex-col justify-center h-auto">
-        <div
-            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white ">
+        <div class="card ">
             <div class=" md:w-1/3  grid place-items-center">
                 <img src="{{projectItem.img}}" alt="tailwind logo"
                     class="project-item  img-fit rounded-xl max-w-full" />
@@ -16,6 +15,9 @@
                     Technologies Used:
                     <span class="font-normal  text-base">{{projectItem.technology}}</span>
                 </p>
+                <a title="Click for Detailed View" href="{{projectItem.url}}" class="font-bold "><u> Read more.. </u>
+                    <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                </a>
             </div>
         </div>
     </div>

@@ -1,13 +1,11 @@
 .main-part {
-  width: 940px;
+  width: 100%;
   min-height: 716px;
   background-color: var(--divColor);
-  margin-top: 40px;
   border-radius: 27px;
-  padding: 0 0 79px 58px;
+  padding: 0 0 45px 55px;
   border: 1px solid var(--border-color);
   overflow-x: auto;
-  margin-bottom: 44px;
 
   .main-part::-webkit-scrollbar {
     width: 0.1px;
@@ -41,7 +39,7 @@
       inset 0px -5px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: 0.3s;
-    margin: 21px 0 0 200px;
+    margin: 21px 26px 0 0px;
     &:after {
       content: "";
       width: 29px;

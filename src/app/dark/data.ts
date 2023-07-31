@@ -4,8 +4,8 @@ export const network = [
     { title: 'facebook', id: 'Ashik ch', icon: 'fa-2xl fa-brands fa-facebook', url: 'https://www.facebook.com/ashikch.poyiloor' },
     { title: 'linkedin', id: 'ashik-ch', icon: 'fa-2xl fa-brands fa-linkedin', url: "https://www.linkedin.com/in/ashik-ch-65827920b/" },
     { title: 'github', id: 'Ashik-ch', icon: 'fa-2xl fa-brands fa-github', url: 'https://github.com/Ashik-ch' },
-    { title: 'google', id: '_ashik_ch', icon: 'fa-2xl fa-brands fa-google', url: 'https:/www.google.com' },
-    { title: 'google', id: '_ashik_ch', icon: 'fa-2xl fa-brands fa-instagram', url: 'https://www.instagram.com/_ashik_ch/' },
+    { title: 'website', id: 'shik-ch.github.io/Ashik-CH/', icon: 'fa-2xl fa-solid fa-globe', url: 'https://ashik-ch.github.io/Ashik-CH/' },
+    { title: 'instagram', id: '_ashik_ch', icon: 'fa-2xl fa-brands fa-instagram', url: 'https://www.instagram.com/_ashik_ch/' },
 ];
 
 /**@description  Resume -  Experience and Education */
@@ -44,9 +44,9 @@ export const skill = [
 /**@description Portfolio - Project  */
 export const project = [
     { id: 1, title: "Hiring Hub", subtitle: "Job portal Web site", describtion: " Web app for people who are searching for a part-time job and companies  who are hiring. The application allows job seekers to apply for job  openings.Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.", img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/web5.jpg", technology: "Typescript - Angular, Node, Express, MongoDB " },
-    { id: 2, title: "Personal Website", subtitle: "Webiste", describtion: " Web app for people who are searching for a part-time job and companies  who are hiring. The application allows job seekers to apply for job  openings.Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.", img: "https://st3.depositphotos.com/2572561/16360/i/600/depositphotos_163607278-stock-photo-over-the-shoulder-footage-of.jpg", technology: 'HTML, CSS, Javascript, Angualar' },
-    { id: 3, title: "Zil Cart", subtitle: "Ecommerce platform", describtion: "(Typescript - Angular, Node, Express, MongoDB ) E-commerce platform that enables to create online stores and sell products to consumers. Users can easily add their products, and the admin has the power to    approve or reject them. Once approved, consumers can browse theproducts, add them to their cart, and place orders", img: "https://st3.depositphotos.com/2572561/16360/i/600/depositphotos_163607278-stock-photo-over-the-shoulder-footage-of.jpg", technology: 'Typescript - Angular, Node, Express, MongoDB    ' },
-    { id: 4, title: "Mindroid'20", subtitle: "Department Magazine ", describtion: "Computer science departmental Magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The Magazine created on corona virus lock down days. Magazine included with Mlayalam amd English article with Poems, Stories, Experience note, Tech article, Reports", img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/blog2.jpg", technology: 'Adobe Photoshop', url: 'https://online.fliphtml5.com/mrinn/acjm/#p=1' }
+    { id: 2, title: "Zil Cart", subtitle: "Ecommerce platform", describtion: " E-commerce platform that enables to create online stores and sell products to consumers. Users can easily add their products, and the admin has the power to approve or reject them. Once approved, consumers can browse theproducts, add them to their cart, and place orders", img: "https://st3.depositphotos.com/2572561/16360/i/600/depositphotos_163607278-stock-photo-over-the-shoulder-footage-of.jpg", technology: 'Typescript - Angular, Node, Express, MongoDB    ' },
+    { id: 3, title: "Mindroid'20", subtitle: "Department Magazine ", describtion: "Computer science departmental Magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The Magazine created on corona virus lock down days. Magazine included with Mlayalam amd English article with Poems, Stories, Experience note, Tech article, Reports", img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/blog2.jpg", technology: 'Adobe Photoshop', url: 'https://online.fliphtml5.com/mrinn/acjm/#p=1' },
+    { id: 4, title: "Portfolio", subtitle: "Personal Webiste", describtion: "Personal website that conatains Resume,Education, Experience, Project details, skills, Contact deatil.", img: 'assets/webpage.png', technology: 'HTML, CSS,, Tailwind, Angualar', url: 'https://ashik-ch.github.io/Ashik-CH/' },
 ]
 
 /**@description HomePage */
