@@ -1,6 +1,14 @@
-.flex {
+.navbar {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 400px) {
+    align-items: flex-end;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    width: 142px;
+  }
 }
 
 .flex > div {

@@ -18,6 +18,7 @@
   textarea {
     background-color: var(--divColor);
     border-color: var(--invert-color2);
+    width: 96%;
   }
 
   .line {
@@ -25,9 +26,17 @@
     width: 82px;
     background-color: var(--text-header1);
   }
+
+  @media (max-width: 400px) {
+    align-items: center;
+    width: 96%;
+    height: auto;
+  }
 }
 
 .toggles {
+  display: flex;
+  justify-content: flex-end;
   label {
     width: 50px;
     height: 20px;
@@ -39,7 +48,7 @@
       inset 0px -5px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: 0.3s;
-    margin: 21px 26px 0 0px;
+    margin: 0px 26px 0 0px;
     &:after {
       content: "";
       width: 29px;
@@ -53,10 +62,10 @@
       transition: 0.3s;
     }
     .toggle-icon {
-      margin: 9px 0px 0px 6px;
       gap: 15px;
       display: flex;
       color: #252525;
+      padding: 9px 0 0 7px;
     }
   }
   input {
@@ -68,6 +77,19 @@
         background: linear-gradient(180deg, #777, #3a3a3a);
       }
     }
+  }
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.header {
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
 
@@ -138,18 +160,27 @@
 
   .skills {
     position: relative;
-    height: 165px;
-    width: auto;
     border-color: var(--border-color);
 
     .skill-set {
       position: relative;
       display: flex;
-      width: auto;
+      justify-content: space-around;
+
+      @media (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      }
     }
     .skill-title {
       border-color: var(--border-color);
       padding: 5px;
+      margin-top: 16px;
+
+      @media (max-width: 400px) {
+        margin-top: 0px;
+      }
     }
     .skill-title:hover {
       border: 1px solid var(--border-color);
@@ -158,7 +189,7 @@
 
     .progress-bar {
       position: absolute;
-      bottom: -30px;
+      top: -7px;
       background-color: #007bff;
       left: 0;
       color: white;
@@ -168,14 +199,36 @@
       visibility: hidden;
     }
   }
+  .resume-detail {
+    @media (max-width: 400px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 //end of resume
 
 // Portfolio
+
+.portfolio-details {
+  display: flex;
+  gap: 11px;
+  justify-content: space-around;
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .portfolio-img {
-  width: 20%;
+  width: 150px;
   height: 150px;
   object-fit: cover;
+
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 .portfolio-desc {
@@ -184,6 +237,11 @@
   height: 150px;
   border-radius: 10px;
   border: 2px solid gray;
+
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 150px;
+  }
 }
 
 .portfolio-desc::-webkit-scrollbar {
@@ -202,6 +260,14 @@
 .header3:hover {
 }
 // Contact
+.contact-section {
+  gap: 6.5rem;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .message-field {
   border: 1px solid var(--border-color);
   font-size: 0.875rem;

@@ -1,14 +1,28 @@
 .side-bar {
-  align-items: center;
   text-align: -webkit-center;
   background-color: var(--divColor);
   border: 1px solid var(--border-color);
   border-radius: 32px;
   position: sticky;
   top: 42px;
-
   height: 716px;
   width: auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 400px) {
+    align-items: center; /* Center align the row items */
+    width: 374px; /* Allow the network container to expand based on content */
+    height: auto;
+  }
+}
+
+.profile {
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .title2 {
@@ -20,6 +34,16 @@
   flex-direction: column;
   display: flex;
   width: 180px;
+  margin-top: 24px;
+
+  @media (max-width: 400px) {
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    width: auto;
+    flex-wrap: wrap;
+    margin-top: 0px;
+  }
 
   .icons {
     padding: 7px 10px;

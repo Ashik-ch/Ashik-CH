@@ -1,14 +1,16 @@
 <div class="main-part">
 
   <!-- Day-mode and Nav-bar -->
-  <div class="toggles flex justify-end">
-    <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
-    <label for="darkmode-toggle">
-      <div class="toggle-icon">
-        <i class="fa-solid fa-moon fa-sm"></i>
-        <i class="far fa-sun fa-xs"></i>
-      </div>
-    </label>
+  <div class="toggles">
+    <div class="header">
+      <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
+      <label for="darkmode-toggle">
+        <div class="toggle-icon">
+          <i class="fa-solid fa-moon fa-sm"></i>
+          <i class="far fa-sun fa-xs"></i>
+        </div>
+      </label>
+    </div>
     <div class="flex justify-end">
       <app-nav (clickValue)="showDiv($event)"></app-nav>
     </div>
@@ -40,7 +42,7 @@
   <section class="resume" *ngIf="openDiv == 'Resume'">
     <div class="header1 font-bold">Resume</div>
     <div class="line mb-[3rem] "></div>
-    <div class="grid grid-cols-2 mt-[2.75rem]">
+    <div class="resume-detail grid grid-cols-2 mt-[2.75rem]">
 
       <!-- Experince & Education -->
       <div *ngFor="let data of data">
@@ -83,9 +85,9 @@
   <section *ngIf="openDiv == 'Portfolio'">
     <h1 class="header1 font-bold">PortFolio</h1>
     <div class="line mb-[3rem]"></div>
-    <div class="  flex flex-col my-4 " style="padding: 0 44px 0px 0px;" *ngFor="let p of project; let i = index">
+    <div class=" flex flex-col my-4 " style="padding: 0 44px 0px 0px;" *ngFor="let p of project; let i = index">
 
-      <div class="flex gap-12" [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
+      <div class=" portfolio-details " [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
         <img routerLink="project/{{p.id}}" class="project-item portfolio-img border border-sm rounded-xl" [src]="p.img"
           alt="img" />
         <div routerLink="project/{{p.id}}" class="project-item portfolio-desc border border-base p-2">
@@ -103,21 +105,22 @@
     <h1 class="header1 font-bold ">Contact</h1>
     <div class="line mb-[3rem] "></div>
 
-    <div class="grid grid-cols-2">
+
+    <div class=" contact-section grid grid-cols-2 ">
       <!-- Send a Message -->
       <section>
         <div class="header2">Send a message</div>
         <div class="mt-5">
           <label for=" first_name" class="block mb-2  text-sm font-medium ">Name</label>
-          <input type="text" id="first_name" class="message-field w-full " placeholder="Name" required>
+          <input type="text" id="first_name" class="message-field " placeholder="Name" required>
         </div>
         <div class="mt-4">
           <label for="last_name" class="block mb-2 text-sm font-medium ">Email</label>
-          <input type="text" id="email" class="message-field  w-full " placeholder="Email" required>
+          <input type="text" id="email" class="message-field" placeholder="Email" required>
         </div>
         <div class="mt-4">
           <label for="last_name" class="block mb-2 text-sm font-medium ">Message</label>
-          <textarea type="text-area " style="height: 156px;" class="message-field  w-full " placeholder="Message"
+          <textarea type="text-area " style="height: 156px;" class="message-field " placeholder="Message"
             required></textarea>
         </div>
 
@@ -134,7 +137,7 @@
       </section>
 
       <!-- Get in touch  -->
-      <section class="pl-20 pr-4">
+      <section class="">
         <div class="header2 mb-8"> Get in touch </div>
         <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
         <div class="ml-5"> +91 9645937117</div>
@@ -150,7 +153,6 @@
         </div>
       </section>
     </div>
-
   </section>
 
 </div>
