@@ -1,6 +1,6 @@
 .main-part {
   width: 100%;
-  min-height: 716px;
+  height: 100vh;
   background-color: var(--divColor);
   border-radius: 27px;
   padding: 0 0 45px 55px;
@@ -94,10 +94,13 @@
 }
 
 .home {
+  height: 70%;
+  .flex {
+    height: 100%;
+  }
   .buttons {
     display: flex;
     justify-content: center;
-    margin: 183px 0 0 0px;
     color: var(--invert-color1);
     gap: 18px;
   }
@@ -115,6 +118,18 @@
     font-family: Montserrat;
     font-weight: 400;
     word-wrap: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    margin-top: 20px;
+    margin-inline-start: 0;
+    flex-direction: column;
+
+    .button {
+      margin: 0px;
+    }
   }
 }
 
@@ -167,7 +182,7 @@
       display: flex;
       justify-content: space-around;
 
-      @media (max-width: 400px) {
+      @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
         height: auto;
@@ -178,7 +193,7 @@
       padding: 5px;
       margin-top: 16px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 768px) {
         margin-top: 0px;
       }
     }
@@ -200,7 +215,7 @@
     }
   }
   .resume-detail {
-    @media (max-width: 400px) {
+    @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
     }
@@ -261,8 +276,8 @@
 }
 // Contact
 .contact-section {
-  gap: 6.5rem;
-  @media (max-width: 400px) {
+  gap: 2.5rem;
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     gap: 2rem;

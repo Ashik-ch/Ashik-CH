@@ -4,24 +4,17 @@
   border: 1px solid var(--border-color);
   border-radius: 32px;
   position: sticky;
-  top: 42px;
-  height: 716px;
+  height: 100vh;
   width: auto;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 400px) {
-    align-items: center; /* Center align the row items */
-    width: 374px; /* Allow the network container to expand based on content */
-    height: auto;
-  }
+  overflow-x: auto;
 }
 
-.profile {
-  @media (max-width: 400px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+@media (max-width: 768px) {
+  .side-bar {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -30,17 +23,16 @@
 }
 
 .network {
-  gap: 14px;
   flex-direction: column;
   display: flex;
   width: 180px;
   margin-top: 24px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 768px) {
     flex-direction: row;
     align-items: center;
     overflow-x: auto;
-    width: auto;
+    width: 100%;
     flex-wrap: wrap;
     margin-top: 0px;
   }

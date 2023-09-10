@@ -1,4 +1,4 @@
-<div class="navbar ">
+<div class="navbar py-4">
   <div class="items" [ngClass]="{'active-link ': nav.path === activeTag }" *ngFor="let nav of Navbar"
     (click)="showdiv(nav.path)">{{nav.title}}</div>
 </div>

@@ -1,14 +1,16 @@
 <div class="side-bar p-10">
-  <div class=" profile">
-    <div class="p-5">
-      <img class="w-24 h-24 rounded-lg align-item-center bg-white" src='assets/ashik3.png' alt="hy" />
+  <div class="row profile">
+    <div class="col-sm-6 col-md-12">
+      <img class=" img-fluid  rounded-lg align-item-center bg-white" src='assets/ashik3.png' alt="hy" width='100' />
     </div>
-    <div class="title mt-1">
-      <h1 class="text-2xl font-bold mb-1">ASHIK CH</h1>
-      <h1 class="title2 border rounded-lg py-2 text-xs">Web Developer | Designer</h1>
+    <div class="col-sm-6 col-md-12">
+      <div class="title mt-4 ">
+        <h1 class="text-2xl font-bold mb-1">ASHIK CH</h1>
+        <h1 class="title2 border rounded-lg py-2 px-2 text-xs">Web Developer | Designer</h1>
+      </div>
     </div>
   </div>
-  <div class="network">
+  <div class="network gap-1 ">
     <div class="outericons h-auto rounded-lg" *ngFor="let net of network">
       <div class="icons text-left  mt-2">
         <i class="{{net.icon}}"> </i>
