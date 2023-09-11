@@ -12,13 +12,15 @@
   </div>
   <div class="network gap-1 ">
     <div class="outericons h-auto rounded-lg" *ngFor="let net of network">
-      <div class="icons text-left  mt-2">
-        <i class="{{net.icon}}"> </i>
-        <div class="ml-2">
-          <h1>{{net.title}}</h1>
-          <h3>{{net.id}}</h3>
+      <a [href]="net?.url" style="cursor: pointer;">
+        <div class="icons text-left  mt-2">
+          <i class="{{net.icon}}"> </i>
+          <div class="ml-2">
+            <h1>{{net.title}}</h1>
+            <h3>{{net.id}}</h3>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
