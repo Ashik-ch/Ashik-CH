@@ -13,7 +13,7 @@ export const data = [
     {
         "main": "Experience",
         "items": [
-            { "title": "Zil money", "subtit": ["Angular Developer", "Manjeri"] },
+            { "title": "Vaas ITS", "subtit": ["Software Engineer", "Kochi"] },
             { "title": "AmruthaShala", "subtit": ["Angular Developer", "Hyderabad"] },
             { "title": "Luminar", "subtit": ["Angular Developer", "Kozhikode"] }]
     },
@@ -30,11 +30,11 @@ export const data = [
 export const skill = [
     { "title": "Angular", "skillWidth": "80%" },
     { "title": "Tailwind", "skillWidth": "96%" },
+    { "title": "Angular Material", "skillWidth": "70%" },
     { "title": "Node.JS", "skillWidth": "62%" },
     { "title": "React", "skillWidth": "45%" },
     { "title": "MongoDB", "skillWidth": "50%" },
     { "title": "Git", "skillWidth": "90%" },
-    { "title": "SQL", "skillWidth": "50%" },
     { "title": "HTML,CSS", "skillWidth": "100%" },
     { "title": "Bootstrap", "skillWidth": "88%" },
     { "title": "Photoshop", "skillWidth": "70%" },
@@ -43,14 +43,87 @@ export const skill = [
 
 /**@description Portfolio - Project  */
 export const project = [
-    { id: 1, title: "Hiring Hub", subtitle: "Job portal Web site", describtion: " Web app for people who are searching for a part-time job and companies  who are hiring. The application allows job seekers to apply for job  openings.Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.", img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/web5.jpg", technology: "Typescript - Angular, Node, Express, MongoDB " },
-    { id: 2, title: "Zil Cart", subtitle: "Ecommerce platform", describtion: " E-commerce platform that enables to create online stores and sell products to consumers. Users can easily add their products, and the admin has the power to approve or reject them. Once approved, consumers can browse theproducts, add them to their cart, and place orders", img: "https://st3.depositphotos.com/2572561/16360/i/600/depositphotos_163607278-stock-photo-over-the-shoulder-footage-of.jpg", technology: 'Typescript - Angular, Node, Express, MongoDB    ' },
-    { id: 3, title: "Mindroid'20", subtitle: "Department Magazine ", describtion: "Computer science departmental Magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The Magazine created on corona virus lock down days. Magazine included with Mlayalam amd English article with Poems, Stories, Experience note, Tech article, Reports", img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/blog2.jpg", technology: 'Adobe Photoshop', url: 'https://online.fliphtml5.com/mrinn/acjm/#p=1' },
-    { id: 4, title: "Portfolio", subtitle: "Personal Webiste", describtion: "Personal website that conatains Resume,Education, Experience, Project details, skills, Contact deatil.", img: 'assets/webpage.png', technology: 'HTML, CSS,, Tailwind, Angualar', url: 'https://ashik-ch.github.io/Ashik-CH/' },
-]
+    {
+        id: 1,
+        title: "Eat and Drink ERP - Restaurant Management System",
+        subtitle: "Restaurant ERP System",
+        describtion: "Developed and maintained a restaurant management ERP system with features like product management, reports, dashboards, and financial tracking. Implemented role-based access control and warehouse management for purchase orders and material transfers. Followed Scrum methodologies, participating in sprint planning and daily standups to enhance project efficiency.",
+        technology: "Angular 18, PrimeFlex, PrimeNG, GitHub, PM Tool, Swagger",
+        img: 'assets/erp.png',
+        url: 'https://erp.eatanddrink.ae/'
+    },
+    {
+        id: 2,
+        title: "Thazhayil Loan App",
+        subtitle: "Loan Management Application",
+        describtion: "The Thazhayil Loan App streamlines loan management with an intuitive Angular Material interface. Users can access loan details, apply for new loans, and track status, while the admin side ensures secure management with real-time updates.",
+        technology: "Angular 18, Angular Material, Bitbucket, Source Tree",
+        img: 'assets/loanApp.png',
+        url: 'https://dashboard.thazhayilfinance.com/#/login'
+    },
+    {
+        id: 3,
+        title: "Consumer Loan App",
+        subtitle: "Loan Application Management",
+        describtion: "Developed a loan app for Thazhayil Finance, allowing users to apply, track status, and manage accounts, while the admin panel streamlines verification and approvals for better efficiency.",
+        technology: "Angular 18, Angular Material, Bitbucket, Source Tree",
+        img: 'assets/consumerLoan.png',
+        url: 'http://loanapp.vaas.tech/smtng?type=olda'
+    },
+    {
+        id: 4,
+        title: "Devakived - HRMS Management System",
+        subtitle: "HR Management System",
+        describtion: "Developed an HR management system facilitating employee management, leave assignment, and report generation with a user-friendly responsive interface.",
+        technology: "Angular 17, Unit Testing, PrimeNG, GitHub, PM Tool, Swagger"
+    },
+    {
+        id: 5,
+        title: "Amruthashala - Food Ordering and Delivery App",
+        subtitle: "Food Ordering & Delivery App",
+        describtion: "Developed an app for streamlined food ordering, delivery logistics, and meal planning tailored to customer preferences. Included real-time order tracking, personalized meal options, and secure payment processing.",
+        technology: "Angular 16, TailwindCSS, Python, Slack, Jira",
+        img: 'assets/amruthashala.png',
+        url: 'https://www.amruthashala.com/'
+    },
+    {
+        id: 6,
+        title: "Hiring Hub",
+        subtitle: "Job Portal Website",
+        describtion: "Web app for people who are searching for a part-time job and companies who are hiring. The application allows job seekers to apply for job openings. Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.",
+        img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/web5.jpg",
+        technology: "Typescript - Angular, Node, Express, MongoDB"
+    },
+    {
+        id: 7,
+        title: "Mindroid'20",
+        subtitle: "Department Magazine",
+        describtion: "Computer science departmental magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The magazine was created during the COVID-19 lockdown. It includes Malayalam and English articles, poems, stories, experience notes, tech articles, and reports.",
+        img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/blog2.jpg",
+        technology: "Adobe Photoshop",
+        url: "https://online.fliphtml5.com/mrinn/acjm/#p=1"
+    },
+    {
+        id: 8,
+        title: "Portfolio",
+        subtitle: "Personal Website",
+        describtion: "Personal website that contains Resume, Education, Experience, Project details, Skills, and Contact details.",
+        img: "assets/webpage.png",
+        technology: "HTML, CSS, Tailwind, Angular",
+        url: "https://ashik-ch.github.io/Ashik-CH/"
+    }
+];
+
 
 /**@description HomePage */
-export const aboutMe = "I am seeking opportunities to join a company that can help me in enhancing my my technical skills, quick learning ability, strengthening my knowledge, and make a meaningful contribution to the company. I am willing to explore a wide variety of opportunities that can help me gain perspective. I am willing to explore a wide variety of opportunities that can help me gain perspective";
+export const aboutMe = `A highly skilled experienced Web Developer
+with a strong passion for continuous growth and learning.
+With experience in developing complex systems and
+applications, Excel in delivering client
+satisfaction through meticulous attention to
+detail and effective communication. Eager
+to leverage my expertise to contribute to
+the success of innovative projects and collaborations.`;
 
 
 /**Navbar */
