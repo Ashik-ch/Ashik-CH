@@ -31,6 +31,9 @@
     background-color: var(--text-header1);
   }
 
+  @media (max-width: 768px) {
+    padding: 0 0 20px 20px;
+  }
   @media (max-width: 400px) {
     align-items: center;
     width: 96%;
@@ -105,6 +108,8 @@
   .buttons {
     display: flex;
     justify-content: center;
+    gap: 10px;
+    align-items: center;
     color: var(--invert-color1);
   }
 
@@ -130,6 +135,9 @@
     font-family: Montserrat;
     font-weight: 400;
     word-wrap: break-word;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -238,6 +246,12 @@
 
 // Portfolio
 
+.portfolio-container {
+  padding: 0 40px 0px 0px;
+  @media (max-width: 768px) {
+    padding: 0 20px 0px 0px;
+  }
+}
 .portfolio-details {
   display: flex;
   gap: 11px;
@@ -285,8 +299,6 @@
   color: var(--text-header3);
 }
 
-.header3:hover {
-}
 // Contact
 .contact-section {
   gap: 2.5rem;

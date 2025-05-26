@@ -2,8 +2,8 @@
 export const network = [
     { title: 'Gmail', id: 'ashikch7117@gmail.com', icon: 'fa-2xl fa-solid fa-envelope', url: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" },
     { title: 'linkedin', id: 'ashik-ch', icon: 'fa-2xl fa-brands fa-linkedin', url: "https://www.linkedin.com/in/ashik-ch-65827920b/" },
-    { title: 'github', id: 'Ashik-ch', icon: 'fa-2xl fa-brands fa-github', url: 'https://github.com/Ashik-ch' },
     { title: 'website', id: 'ashik-ch.github.io/ashik.ch', icon: 'fa-2xl fa-solid fa-globe', url: 'https://ashik-ch.github.io/ashik.ch/' },
+    { title: 'github', id: 'Ashik-ch', icon: 'fa-2xl fa-brands fa-github', url: 'https://github.com/Ashik-ch' },
     { title: 'instagram', id: '_ashik_ch', icon: 'fa-2xl fa-brands fa-instagram', url: 'https://www.instagram.com/_ashik_ch/' },
     { title: 'facebook', id: 'Ashik ch', icon: 'fa-2xl fa-brands fa-facebook', url: 'https://www.facebook.com/ashikch.poyiloor' },
 ];

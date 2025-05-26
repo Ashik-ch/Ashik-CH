@@ -9,6 +9,13 @@
   display: flex;
   flex-direction: column;
   overflow-x: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.side-bar::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 768px) {

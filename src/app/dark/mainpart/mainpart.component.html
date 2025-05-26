@@ -67,10 +67,10 @@
     <!-- SKILL -->
     <div class="skills flex flex-col border border-base rounded rounded-xl mr-4 p-4 mt-8">
       <div class="header2 mb-4"> Skill</div>
-      <div class="flex skill-set ">
+      <div class="flex skill-set">
         <div *ngFor="let s of skill" (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
           <h1 class="skill-title">{{ s.title }}</h1>
-          <div class="progress-bar" [style.width]="s.skillWidth"
+          <div class="progress-bar mb-2" [style.width]="s.skillWidth"
             [style.visibility]="showProgressBar === s ? 'visible' : 'hidden'">
             <!-- {{ s.skillWidth }} -->
           </div>
@@ -85,15 +85,14 @@
   <section *ngIf="openDiv == 'Portfolio'">
     <h1 class="header1 font-bold">PortFolio</h1>
     <div class="line mb-[3rem]"></div>
-    <div class=" flex flex-col my-4 " style="padding: 0 44px 0px 0px;" *ngFor="let p of project; let i = index">
-
+    <div class="portfolio-container flex flex-col my-4" *ngFor="let p of project; let i = index">
       <div class=" portfolio-details " [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
         <img routerLink="project/{{p.id}}" class="project-item portfolio-img border border-sm rounded-xl" [src]="p.img"
           alt="img" />
         <div routerLink="project/{{p.id}}" class="project-item portfolio-desc border border-base p-2">
           <h1 class="header3">{{p.title}}</h1>
           <h3 class="text-base font-thin">{{p.subtitle}}</h3>
-          <h5 class="text-sm"> {{p.description}} </h5>
+          <h5 class="text-sm sm:text-xs"> {{p.description}} </h5>
         </div>
       </div>
 

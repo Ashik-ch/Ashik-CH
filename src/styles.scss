@@ -43,11 +43,18 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: var(--color-text);
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
+
   .header3 {
     color: var(--text-header3);
     font-size: 20px;
     font-weight: 900;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   .border {
