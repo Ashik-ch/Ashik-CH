@@ -22,9 +22,14 @@
   border-radius: 0 25px 0 25px;
 }
 
-.navbar .items { 
+.navbar .items {
   font-weight: bold;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-weight: normal;
+    font-size: smaller;
+  }
 }
 
 .active-link {

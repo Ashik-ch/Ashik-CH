@@ -39,6 +39,9 @@ body {
     font-weight: bold;
     color: var(--text-header1);
     margin-top: -42px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   .header2 {

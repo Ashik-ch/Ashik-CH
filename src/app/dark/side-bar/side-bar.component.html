@@ -1,4 +1,4 @@
-<div class="side-bar p-10">
+<div class="side-bar">
   <div class="row profile">
     <div class="col-sm-6 col-md-12">
       <img class=" img-fluid  rounded-lg align-item-center bg-white" src='assets/ashik3.png' alt="hy" width='100' />
@@ -10,12 +10,12 @@
       </div>
     </div>
   </div>
-  <div class="network gap-1 ">
+  <div class="network">
     <div class="outericons h-auto rounded-lg" *ngFor="let net of network">
       <a [href]="net?.url" style="cursor: pointer;">
-        <div class="icons text-left  mt-2">
+        <div class="icons text-left m-1">
           <i class="{{net.icon}}"> </i>
-          <div class="ml-2">
+          <div class="ml-2 hidden sm:block">
             <h1>{{net.title}}</h1>
             <h3>{{net.id}}</h3>
           </div>

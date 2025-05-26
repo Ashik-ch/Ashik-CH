@@ -1,5 +1,6 @@
 .side-bar {
   text-align: -webkit-center;
+  padding: 2.5rem;
   background-color: var(--divColor);
   border: 1px solid var(--border-color);
   border-radius: 32px;
@@ -12,6 +13,10 @@
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .side-bar::-webkit-scrollbar {
@@ -53,6 +58,10 @@
 
     border-radius: 10px;
     display: flex;
+
+    @media (max-width: 768px) {
+      padding: 20px 10px;
+    }
   }
 
   .icons h1 {
@@ -69,7 +78,7 @@
   }
 
   .outericons i {
-    margin-top: 17px;
+    align-content: center;
     font-size: 25px;
   }
 }
