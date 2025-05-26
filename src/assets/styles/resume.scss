@@ -1,0 +1,90 @@
+/** RESUME */
+
+.resume {
+  height: 582px;
+  padding-right: 35px;
+  .ver-lines {
+    width: 2px;
+    height: calc(100% - 60px);
+    border: 0.25px rgba(210.59, 210.59, 210.59, 0.52) solid;
+    background: #252525;
+  }
+
+  .dots {
+    width: 6px;
+    height: 6px;
+    background: #252525;
+    border-radius: 9999px;
+    border: 0.25px rgba(211, 211, 211, 0.52) solid;
+    margin-left: -4px;
+  }
+
+  .hor-lines {
+    width: 42px;
+    height: 2px;
+    background: #252525;
+    border: 0.25px rgba(210.59, 210.59, 210.59, 0.52) solid;
+  }
+  .title {
+    color: var(--text-header1);
+  }
+
+  .title-text {
+    color: var(--text-header3);
+  }
+
+  .sub-title {
+    margin-left: 60px;
+    font-size: 14px;
+  }
+
+  .skills {
+    position: relative;
+    border-color: var(--border-color);
+
+    .skill-set {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      }
+    }
+    .skill-title {
+      border-color: var(--border-color);
+      padding: 5px;
+      margin-top: 16px;
+      border-radius: 10px;
+
+      @media (max-width: 768px) {
+        margin-top: 0px;
+      }
+    }
+    .skill-title:hover {
+      border: 1px solid var(--border-color);
+      box-shadow: -1px -1px 2px var(--bodyColor);
+    }
+
+    .progress-bar {
+      position: absolute;
+      top: -7px;
+      background-color: #007bff;
+      left: 0;
+      color: white;
+      height: 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      visibility: hidden;
+    }
+  }
+  .resume-detail {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+//end of resume
