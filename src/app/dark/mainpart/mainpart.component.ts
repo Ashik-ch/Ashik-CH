@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { network, project, skill, data, aboutMe } from '../data';
 import { ThemeService } from 'src/app/theme.service';
 import { Location } from '@angular/common';
@@ -25,13 +25,16 @@ export class MainpartComponent implements OnInit {
   currentTheme: 'dark' | 'light';
   newTheme: 'dark' | 'light';
 
-  constructor(private route: Router, private themeService: ThemeService, private location: Location) {
+  constructor(private router: Router,
+    private themeService: ThemeService,
+    private location: Location,
+    private route: ActivatedRoute) {
     this.currentTheme = this.themeService.getCurrentTheme();
     this.newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
   }
 
   ngOnInit(): void {
-    this.previouspage()
+    this.previousPage()
   }
 
   /**
@@ -40,7 +43,7 @@ export class MainpartComponent implements OnInit {
    */
   showDiv(val: string) {
     this.openDiv = val;
-    this.route.navigate([], {
+    this.router.navigate([], {
       queryParams: { section: val },
       queryParamsHandling: 'merge'
     })
@@ -49,11 +52,12 @@ export class MainpartComponent implements OnInit {
   /**
    * @description for navigation previous page
    */
-  previouspage() {
+  previousPage() {
     this.location.subscribe((event) => {
       const sectionParam = new URLSearchParams(event.url).get('section');
       this.openDiv = sectionParam || '';
     });
+    this.openDiv = this.route.snapshot.queryParamMap.get('section') || 'Home';
   }
 
   /**
@@ -68,11 +72,17 @@ export class MainpartComponent implements OnInit {
 
   contact(val: string) {
     this.openDiv = val;
-    this.route.navigate([], {
+    this.router.navigate([], {
       queryParams: { section: val },
       queryParamsHandling: 'merge'
     })
   }
 
+  whatsApp() {
+    const phoneNumber = '+919645937117';
+    const message = encodeURIComponent('Hello, I would like to get in touch with you!');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  }
 
 }

@@ -13,16 +13,16 @@ export const data = [
     {
         "main": "Experience",
         "items": [
-            { "title": "Vaas ITS", "subtit": ["Software Engineer", "Kochi"] },
-            { "title": "AmruthaShala", "subtit": ["Angular Developer", "Hyderabad"] },
-            { "title": "Luminar", "subtit": ["Angular Developer", "Kozhikode"] }]
+            { "title": "Vaas ITS", "subtitle": ["Software Engineer", "Kochi"] },
+            { "title": "AmruthaShala", "subtitle": ["Frontend Developer", "Hyderabad"] },
+            { "title": "Luminar", "subtitle": ["Angular Developer", "Kozhikode"] }]
     },
     {
         "main": "Education",
         "items": [
-            { "title": "Post Graduation", "subtit": ["MSc. Computer Science 2020 - 22", "Pondicherry University"] },
-            { "title": "Under Graduation", "subtit": ["BSc. Computer Science 2017 - 20", "NAM College, Kannur University"] },
-            { "title": "Higher Secondary", "subtit": ["Computer Science 2015 - 2017", "PRMHSS Kolavalloor"] }]
+            { "title": "Post Graduation", "subtitle": ["MSc. Computer Science 2020 - 22", "Pondicherry University"] },
+            { "title": "Under Graduation", "subtitle": ["BSc. Computer Science 2017 - 20", "NAM College, Kannur University"] },
+            { "title": "Higher Secondary", "subtitle": ["Computer Science 2015 - 2017", "PRMHSS Kolavalloor"] }]
     }
 ]
 
@@ -47,7 +47,7 @@ export const project = [
         id: 1,
         title: "Eat and Drink ERP - Restaurant Management System",
         subtitle: "Restaurant ERP System",
-        describtion: "Developed and maintained a restaurant management ERP system with features like product management, reports, dashboards, and financial tracking. Implemented role-based access control and warehouse management for purchase orders and material transfers. Followed Scrum methodologies, participating in sprint planning and daily standups to enhance project efficiency.",
+        description: "Developed and maintained a restaurant management ERP system with features like product management, reports, dashboards, and financial tracking. Implemented role-based access control and warehouse management for purchase orders and material transfers. Followed Scrum methodologies, participating in sprint planning and daily standups to enhance project efficiency.",
         technology: "Angular 18, PrimeFlex, PrimeNG, GitHub, PM Tool, Swagger",
         img: 'assets/erp.png',
         url: 'https://erp.eatanddrink.ae/'
@@ -56,7 +56,7 @@ export const project = [
         id: 2,
         title: "Thazhayil Loan App",
         subtitle: "Loan Management Application",
-        describtion: "The Thazhayil Loan App streamlines loan management with an intuitive Angular Material interface. Users can access loan details, apply for new loans, and track status, while the admin side ensures secure management with real-time updates.",
+        description: "The Thazhayil Loan App streamlines loan management with an intuitive Angular Material interface. Users can access loan details, apply for new loans, and track status, while the admin side ensures secure management with real-time updates.",
         technology: "Angular 18, Angular Material, Bitbucket, Source Tree",
         img: 'assets/loanApp.png',
         url: 'https://dashboard.thazhayilfinance.com/#/login'
@@ -65,7 +65,7 @@ export const project = [
         id: 3,
         title: "Consumer Loan App",
         subtitle: "Loan Application Management",
-        describtion: "Developed a loan app for Thazhayil Finance, allowing users to apply, track status, and manage accounts, while the admin panel streamlines verification and approvals for better efficiency.",
+        description: "Developed a loan app for Thazhayil Finance, allowing users to apply, track status, and manage accounts, while the admin panel streamlines verification and approvals for better efficiency.",
         technology: "Angular 18, Angular Material, Bitbucket, Source Tree",
         img: 'assets/consumerLoan.png',
         url: 'http://loanapp.vaas.tech/smtng?type=olda'
@@ -74,14 +74,15 @@ export const project = [
         id: 4,
         title: "Devakived - HRMS Management System",
         subtitle: "HR Management System",
-        describtion: "Developed an HR management system facilitating employee management, leave assignment, and report generation with a user-friendly responsive interface.",
-        technology: "Angular 17, Unit Testing, PrimeNG, GitHub, PM Tool, Swagger"
+        description: "Developed an HR management system facilitating employee management, leave assignment, and report generation with a user-friendly responsive interface.",
+        technology: "Angular 17, Unit Testing, PrimeNG, GitHub, PM Tool, Swagger",
+        img: 'assets/hrms_sftwre.jpg',
     },
     {
         id: 5,
         title: "Amruthashala - Food Ordering and Delivery App",
         subtitle: "Food Ordering & Delivery App",
-        describtion: "Developed an app for streamlined food ordering, delivery logistics, and meal planning tailored to customer preferences. Included real-time order tracking, personalized meal options, and secure payment processing.",
+        description: "Developed an app for streamlined food ordering, delivery logistics, and meal planning tailored to customer preferences. Included real-time order tracking, personalized meal options, and secure payment processing.",
         technology: "Angular 16, TailwindCSS, Python, Slack, Jira",
         img: 'assets/amruthashala.png',
         url: 'https://www.amruthashala.com/'
@@ -90,7 +91,7 @@ export const project = [
         id: 6,
         title: "Hiring Hub",
         subtitle: "Job Portal Website",
-        describtion: "Web app for people who are searching for a part-time job and companies who are hiring. The application allows job seekers to apply for job openings. Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.",
+        description: "Web app for people who are searching for a part-time job and companies who are hiring. The application allows job seekers to apply for job openings. Hiring Hub easily helps to enhance the recruitment process for both job seekers and companies.",
         img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/web5.jpg",
         technology: "Typescript - Angular, Node, Express, MongoDB"
     },
@@ -98,7 +99,7 @@ export const project = [
         id: 7,
         title: "Mindroid'20",
         subtitle: "Department Magazine",
-        describtion: "Computer science departmental magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The magazine was created during the COVID-19 lockdown. It includes Malayalam and English articles, poems, stories, experience notes, tech articles, and reports.",
+        description: "Computer science departmental magazine of NAM College Kallikandy that was published by the Principal containing tech and related content. The magazine was created during the COVID-19 lockdown. It includes Malayalam and English articles, poems, stories, experience notes, tech articles, and reports.",
         img: "https://ashik-ch.github.io/ashik.ch/assets/imgs/blog2.jpg",
         technology: "Adobe Photoshop",
         url: "https://online.fliphtml5.com/mrinn/acjm/#p=1"
@@ -107,7 +108,7 @@ export const project = [
         id: 8,
         title: "Portfolio",
         subtitle: "Personal Website",
-        describtion: "Personal website that contains Resume, Education, Experience, Project details, Skills, and Contact details.",
+        description: "Personal website that contains Resume, Education, Experience, Project details, Skills, and Contact details.",
         img: "assets/webpage.png",
         technology: "HTML, CSS, Tailwind, Angular",
         url: "https://ashik-ch.github.io/Ashik-CH/"

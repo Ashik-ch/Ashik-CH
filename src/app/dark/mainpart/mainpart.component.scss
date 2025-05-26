@@ -106,14 +106,23 @@
     display: flex;
     justify-content: center;
     color: var(--invert-color1);
-      }
+  }
+
   .button {
     height: 50px;
-    background: var(--divColor);
-    box-shadow: -1px -1px 2px var(--invert-color1);
-    border-radius: 13px;
-    margin: 20px;
     width: 200px;
+    margin: 20px;
+    background: var(--divColor);
+    border-radius: 13px;
+    box-shadow: -1px -1px 2px var(--invert-color1);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .button:hover {
+    box-shadow: 0px 2px 10px 0px rgb(255 255 255 / 48%);
+    transform: translateY(-2px);
   }
 
   .subheader1 {
