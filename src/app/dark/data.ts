@@ -1,3 +1,5 @@
+/*deploy link command: ng deploy ng build --base-href /Ashik-CH/ && npx angular-cli-ghpages --dir=dist/website */
+
 //**@description  Social Media Network */
 export const network = [
     { title: 'Gmail', id: 'ashikch7117@gmail.com', icon: 'fa-2xl fa-solid fa-envelope', url: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" },
