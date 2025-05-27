@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { network, project, skill, data, aboutMe } from '../data';
 import { ThemeService } from 'src/app/theme.service';
 import { Location } from '@angular/common';
-
+import emailjs from 'emailjs-com';
 
 
 @Component({
@@ -83,6 +83,34 @@ export class MainpartComponent implements OnInit {
     const message = encodeURIComponent('Hello, I would like to get in touch with you!');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
+  }
+
+  form = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  sendEmail() {
+    const serviceID = 'service_a9t2ys5';
+    const templateID = 'template_y6g8cri';
+    const publicKey = '_kYaHnjxPJr6gwFdT';
+
+    const templateParams = {
+      from_name: this.form.name,
+      from_email: this.form.email,
+      message: this.form.message,
+      to_name: 'Ashik CH'
+    };
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then(() => {
+        alert('Message sent!');
+        this.form = { name: '', email: '', message: '' };
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Failed to send message.');
+      });
   }
 
 }

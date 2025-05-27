@@ -106,21 +106,20 @@
 
 
     <div class=" contact-section grid grid-cols-2 ">
-      <!-- Send a Message -->
-      <section>
+      <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
         <div class="header2">Send a message</div>
         <div class="mt-5">
-          <label for=" first_name" class="block mb-2  text-sm font-medium ">Name</label>
-          <input type="text" id="first_name" class="message-field " placeholder="Name" required>
+          <label for="name">Name</label>
+          <input [(ngModel)]="form.name" name="name" required class="message-field" />
         </div>
         <div class="mt-4">
-          <label for="last_name" class="block mb-2 text-sm font-medium ">Email</label>
-          <input type="text" id="email" class="message-field" placeholder="Email" required>
+          <label>Email</label>
+          <input [(ngModel)]="form.email" name="email" required class="message-field" />
         </div>
         <div class="mt-4">
-          <label for="last_name" class="block mb-2 text-sm font-medium ">Message</label>
-          <textarea type="text-area " style="height: 156px;" class="message-field " placeholder="Message"
-            required></textarea>
+          <label>Message</label>
+          <textarea [(ngModel)]="form.message" name="message" required class="message-field"
+            style="height: 156px;"></textarea>
         </div>
 
         <div class="mt-5">
@@ -128,12 +127,12 @@
             class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
             Cancel
           </button>
-          <button type="button"
+          <button type="submit"
             class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
             Send
           </button>
         </div>
-      </section>
+      </form>
 
       <!-- Get in touch  -->
       <section class="">

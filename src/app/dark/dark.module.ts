@@ -5,6 +5,7 @@ import { MainpartComponent } from './mainpart/mainpart.component';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
+import { FormsModule } from '@angular/forms';
 
 /**Routes */
 const router: Routes = [
@@ -26,6 +27,7 @@ const components = [
 
   imports: [
     CommonModule,
+    FormsModule,
     CommonModule, RouterModule.forChild(router)
   ],
 
