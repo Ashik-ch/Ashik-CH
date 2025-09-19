@@ -113,4 +113,14 @@ export class MainpartComponent implements OnInit {
       });
   }
 
+  selectedProject: any = null; // 👈 add this
+
+  openPopup(p: any) {
+    this.selectedProject = p;
+  }
+
+  closePopup() {
+    this.selectedProject = null;
+  }
+
 }

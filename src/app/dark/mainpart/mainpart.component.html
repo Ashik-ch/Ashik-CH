@@ -85,18 +85,43 @@
   <section *ngIf="openDiv == 'Portfolio'">
     <h1 class="header1 font-bold">PortFolio</h1>
     <div class="line mb-[3rem]"></div>
-    <div class="portfolio-container flex flex-col my-4" *ngFor="let p of project; let i = index">
-      <div class=" portfolio-details " [ngClass]="i % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
-        <img routerLink="project/{{p.id}}" class="project-item portfolio-img border border-sm rounded-xl" [src]="p.img"
-          alt="img" />
-        <div routerLink="project/{{p.id}}" class="project-item portfolio-desc border border-base p-2">
-          <h1 class="header3">{{p.title}}</h1>
-          <h3 class="text-base font-thin">{{p.subtitle}}</h3>
-          <h5 class="text-sm sm:text-xs"> {{p.description}} </h5>
+    <!-- Portfolio Grid -->
+    <div class="portfolio-container grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
+      <div *ngFor="let p of project; let i = index"
+        class="relative group rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white">
+        <h2 class="text-center text-xl font-bold py-3 tracking-wide">
+          <span class="bg-gradient-to-r from-purple-500 to-purple-900   bg-clip-text text-transparent">
+            {{ p.title }} </span>
+        </h2>
+        <img [src]="p.img" alt="{{p.title}} image"
+          class="w-full h-100 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+        <div
+          class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center text-white px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-lg font-semibold mb-2">{{ p.subtitle }}</h3>
+          <p class="text-sm">{{ p.description | slice:0:100 }}...</p>
+          <button (click)="openPopup(p)"
+            class="mt-4 px-5 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg shadow-md hover:scale-105 transition-transform">
+            View Details
+          </button>
         </div>
       </div>
-
     </div>
+
+
+    <!-- Popup Modal -->
+    <div *ngIf="selectedProject" class="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
+      <div class="bg-white rounded-2xl shadow-xl p-6 max-w-lg w-full relative">
+        <button (click)="closePopup()"
+          class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+        <h2 class="text-2xl font-bold mb-2 text-black">{{ selectedProject.title }}</h2>
+        <h4 class="text-lg text-gray-600 mb-4">{{ selectedProject.subtitle }}</h4>
+        <div class="flex gap-2 items-center">
+          <img [src]="selectedProject.img" alt="Project image" class="w-full h-56 object-cover rounded-lg mb-4" />
+          <p class="text-gray-700 leading-relaxed">{{ selectedProject.description }}</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- CONTACT  -->
