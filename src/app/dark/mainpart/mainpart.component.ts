@@ -7,9 +7,10 @@ import emailjs from 'emailjs-com';
 
 
 @Component({
-  selector: 'app-mainpart',
-  templateUrl: './mainpart.component.html',
-  styleUrls: ['./mainpart.component.scss']
+    selector: 'app-mainpart',
+    templateUrl: './mainpart.component.html',
+    styleUrls: ['./mainpart.component.scss'],
+    standalone: false
 })
 export class MainpartComponent implements OnInit {
 
