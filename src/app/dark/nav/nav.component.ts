@@ -2,9 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Navbar } from "../data";
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss'],
+    standalone: false
 })
 export class NavComponent {
 
