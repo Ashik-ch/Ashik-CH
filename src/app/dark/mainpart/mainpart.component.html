@@ -1,6 +1,4 @@
 <div class="main-part">
-
-  <!-- Day-mode and Nav-bar -->
   <div class="toggles">
     <div class="header">
       <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
@@ -100,8 +98,8 @@
           <h3 class="text-lg font-semibold mb-2">{{ p.subtitle }}</h3>
           <p class="text-sm">{{ p.description | slice:0:100 }}...</p>
           <button (click)="openPopup(p)"
-            class="mt-4 px-5 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg shadow-md hover:scale-105 transition-transform">
-            View Details
+            class="mt-4 px-2 py-1 border-2 border-white text-white rounded-full shadow-md hover:bg-white hover:text-black transition-all transform hover:scale-105">
+            Know more
           </button>
         </div>
       </div>
@@ -173,11 +171,20 @@
       <section class="">
         <div class="header2 mb-8"> Get in touch </div>
         <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
-        <div class="ml-5"> +91 9645937117</div>
+        <div class="ml-5">
+          <a
+            href="sms:9645937117?body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20know%20a%20more.">
+            +91 9645937117
+          </a>
+        </div>
         <i class="fa fa-light fa-location-dot mt-3 mr-2"></i> <span>Address: </span>
         <div class="ml-6 w-3/5"> Kannur, Kerala -670693. </div>
         <i class="fa-sharp fa-regular fa-envelope mt-3 mr-2"></i> <span>Email: </span>
-        <div class="ml-6 w-3/5 mb-3">ashikch7117@gmail.com </div>
+        <div class="ml-6 w-3/5 mb-3"><a
+            href="mailto:ashikch7117@gmail.com?subject=Web%20Design%20Inquiry&body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.">
+            ashikch7117@gmail.com
+          </a>
+        </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1380.9590350240808!2d75.63607102845975!3d11.769135312403973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQ2JzEwLjAiTiA3NcKwMzgnMTIuNCJF!5e0!3m2!1sen!2sin!4v1694414979549!5m2!1sen!2sin"
           style="border:0; border-radius:10px" allowfullscreen="" loading="lazy"
