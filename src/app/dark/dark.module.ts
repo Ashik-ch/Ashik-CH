@@ -6,7 +6,6 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
 import { FormsModule } from '@angular/forms';
-import { DemoComponent } from '../demo/demo.component';
 import { NgxGalaxyComponent } from '@omnedia/ngx-galaxy';
 
 /**Routes */
@@ -28,7 +27,6 @@ const components = [
   ],
 
   imports: [
-    DemoComponent,
     CommonModule,
     FormsModule,
     NgxGalaxyComponent,
