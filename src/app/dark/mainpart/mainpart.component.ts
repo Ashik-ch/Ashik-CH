@@ -6,6 +6,7 @@ import { CommonModule, Location } from '@angular/common';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../nav/nav.component';
+import { NgxGalaxyComponent } from '@omnedia/ngx-galaxy';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { NavComponent } from '../nav/nav.component';
   imports: [
     CommonModule,
     FormsModule,
-    NavComponent
+    NavComponent,
+    NgxGalaxyComponent
   ]
 })
 export class MainpartComponent implements OnInit {

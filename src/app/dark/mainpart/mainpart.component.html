@@ -1,201 +1,206 @@
-<div class="main-part">
-  <div class="toggles">
-    <div class="header">
-      <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
-      <label for="darkmode-toggle">
-        <div class="toggle-icon">
-          <i class="fa-solid fa-moon fa-sm"></i>
-          <i class="far fa-sun fa-xs"></i>
+<div class="main-part relative overflow-hidden">
+  <om-galaxy [focal]="[0.4, 0.6]" [rotation]="[0.3, 0.7]" [starSpeed]="0.2" [density]="1.5" [hueShift]="180"
+    [disableAnimation]="true" [speed]="0.15" [glowIntensity]="0.2" [transparent]="true" [repulsionStrength]=".09"
+    class="absolute inset-0">
+    <div class="relative z-10 ps-8">
+      <div class="toggles">
+        <div class="header">
+          <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
+          <label for="darkmode-toggle">
+            <div class="toggle-icon">
+              <i class="fa-solid fa-moon fa-sm"></i>
+              <i class="far fa-sun fa-xs"></i>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
-    <div class="flex justify-end">
-      <app-nav (clickValue)="showDiv($event)"></app-nav>
-    </div>
-  </div>
-
-  <!-- HOME -->
-  <section *ngIf="openDiv == 'Home'" class="home">
-    <div class="header1 font-bold">Home</div>
-    <div class="line mb-[3rem] "></div>
-
-    <div class="flex flex-col">
-      <div class="header2 font-bold mb-2">About me</div>
-      <div class="subheader1 pr-14 ">{{ aboutMe }} </div>
-
-      <div class="buttons mt-auto">
-        <button class="button" (click)="whatsApp()">
-          <div class="">Contact Me</div>
-        </button>
-        <button class="button" (click)="contact('Contact')">
-          <div> Hire Me</div>
-        </button>
+        <div class="flex justify-end">
+          <app-nav (clickValue)="showDiv($event)"></app-nav>
+        </div>
       </div>
 
-    </div>
+      <!-- HOME -->
+      <section *ngIf="openDiv == 'Home'" class="home">
+        <div class="header1 font-bold">Home</div>
+        <div class="line mb-[3rem] "></div>
 
-  </section>
+        <div class="flex flex-col">
+          <div class="header2 font-bold mb-2">About me</div>
+          <div class="subheader1 pr-14 ">{{ aboutMe }} </div>
 
-  <!-- RESUME -->
-  <section class="resume" *ngIf="openDiv == 'Resume'">
-    <div class="header1 font-bold">Resume</div>
-    <div class="line mb-[3rem] "></div>
-    <div class="resume-detail grid grid-cols-2 mt-[2.75rem]">
+          <div class="buttons mt-auto">
+            <button class="button" (click)="whatsApp()">
+              <div class="">Contact Me</div>
+            </button>
+            <button class="button" (click)="contact('Contact')">
+              <div> Hire Me</div>
+            </button>
+          </div>
 
-      <!-- Experience & Education -->
-      <div *ngFor="let data of data">
-        <h1 class="header2 font-bold my-2">{{data.main}}</h1>
-        <div class="grid grid-cols-[auto,1fr]">
-          <div class="ver-lines"> </div>
-          <div class="qualif">
-            <div class="flex flex-col mt-5" *ngFor="let list of data.items">
-              <div class="flex items-center">
-                <div class="dots"></div>
-                <div class="hor-lines inline-block mr-4"></div>
-                <div class="title-text text-lg font-bold title">{{list.title}}</div>
+        </div>
+
+      </section>
+
+      <!-- RESUME -->
+      <section class="resume" *ngIf="openDiv == 'Resume'">
+        <div class="header1 font-bold">Resume</div>
+        <div class="line mb-[3rem] "></div>
+        <div class="resume-detail grid grid-cols-2 mt-[2.75rem]">
+
+          <!-- Experience & Education -->
+          <div *ngFor="let data of data">
+            <h1 class="header2 font-bold my-2">{{data.main}}</h1>
+            <div class="grid grid-cols-[auto,1fr]">
+              <div class="ver-lines"> </div>
+              <div class="qualif">
+                <div class="flex flex-col mt-5" *ngFor="let list of data.items">
+                  <div class="flex items-center">
+                    <div class="dots"></div>
+                    <div class="hor-lines inline-block mr-4"></div>
+                    <div class="title-text text-lg font-bold title">{{list.title}}</div>
+                  </div>
+                  <div class="sub-title ">{{list.subtitle[0]}}</div>
+                  <div class="sub-title "><i class="fa-solid fa-location-dot"></i> {{list.subtitle[1]}}</div>
+                </div>
               </div>
-              <div class="sub-title ">{{list.subtitle[0]}}</div>
-              <div class="sub-title "><i class="fa-solid fa-location-dot"></i> {{list.subtitle[1]}}</div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- SKILL -->
-    <div class="skills flex flex-col border border-base rounded rounded-xl mr-4 p-4 mt-8">
-      <div class="header2 mb-4"> Skill</div>
-      <div class="flex skill-set">
-        <div *ngFor="let s of skill" (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
-          <h1 class="skill-title">{{ s.title }}</h1>
-          <div class="progress-bar mb-2" [style.width]="s.skillWidth"
-            [style.visibility]="showProgressBar === s ? 'visible' : 'hidden'">
-            <!-- {{ s.skillWidth }} -->
+        <!-- SKILL -->
+        <div class="skills flex flex-col border border-base rounded rounded-xl mr-4 p-4 mt-8">
+          <div class="header2 mb-4"> Skill</div>
+          <div class="flex skill-set">
+            <div *ngFor="let s of skill" (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
+              <h1 class="skill-title">{{ s.title }}</h1>
+              <div class="progress-bar mb-2" [style.width]="s.skillWidth"
+                [style.visibility]="showProgressBar === s ? 'visible' : 'hidden'">
+                <!-- {{ s.skillWidth }} -->
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-  </section>
+      </section>
 
 
-  <!-- PORTFOLIO  -->
-  <section *ngIf="openDiv == 'Portfolio'">
-    <h1 class="header1 font-bold">PortFolio</h1>
-    <div class="line mb-[3rem]"></div>
-    <!-- Portfolio Grid -->
-    <div class="portfolio-container grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
-      <div *ngFor="let p of project; let i = index"
-        class="relative group rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white">
-        <h2 class="text-center text-xl font-bold py-3 tracking-wide">
-          <span class="bg-gradient-to-r from-purple-500 to-purple-900   bg-clip-text text-transparent">
-            {{ p.title }} </span>
-        </h2>
-        <img [src]="p.img" alt="{{p.title}} image"
-          class="w-full h-100 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
-        <div
-          class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center text-white px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <h3 class="text-lg font-semibold mb-2">{{ p.subtitle }}</h3>
-          <p class="text-sm">{{ p.description | slice:0:100 }}...</p>
-          <button (click)="openPopup(p)"
-            class="mt-4 px-2 py-1 border-2 border-white text-white rounded-full shadow-md hover:bg-white hover:text-black transition-all transform hover:scale-105">
-            Know more
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Popup Modal -->
-    <div *ngIf="selectedProject" class="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
-      <div class="bg-white rounded-2xl shadow-xl p-6 max-w-lg w-full relative">
-        <button (click)="closePopup()"
-          class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
-        <h2 class="text-2xl font-bold mb-2 text-black">{{ selectedProject.title }}</h2>
-        <h4 class="text-lg text-gray-600 mb-4">{{ selectedProject.subtitle }}</h4>
-        <div class="flex gap-2 items-center">
-          <img [src]="selectedProject.img" alt="Project image" class="w-full h-56 object-cover rounded-lg mb-4" />
-          <p class="text-gray-700 leading-relaxed">{{ selectedProject.description }}</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- CONTACT  -->
-  <section *ngIf="openDiv == 'Contact'">
-    <h1 class="header1 font-bold ">Contact</h1>
-    <div class="line mb-[3rem] "></div>
-
-
-    <div class=" contact-section grid grid-cols-2 ">
-      <form (ngSubmit)="sendEmail()" #contactForm="ngForm" novalidate>
-        <div class="header2">Send a message</div>
-        <div class="mt-5">
-          <label for="name">Name</label>
-          <input [(ngModel)]="form.name" name="name" required class="message-field" #name="ngModel" />
-          <div *ngIf="name.invalid && name.touched" class="text-red-600 text-sm mt-1">
-            Name is required
+      <!-- PORTFOLIO  -->
+      <section *ngIf="openDiv == 'Portfolio'">
+        <h1 class="header1 font-bold">PortFolio</h1>
+        <div class="line mb-[3rem]"></div>
+        <!-- Portfolio Grid -->
+        <div class="portfolio-container grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
+          <div *ngFor="let p of project; let i = index"
+            class="relative group rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white">
+            <h2 class="text-center text-xl font-bold py-3 tracking-wide">
+              <span class="bg-gradient-to-r from-purple-500 to-purple-900   bg-clip-text text-transparent">
+                {{ p.title }} </span>
+            </h2>
+            <img [src]="p.img" alt="{{p.title}} image"
+              class="w-full h-100 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+            <div
+              class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center text-white px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <h3 class="text-lg font-semibold mb-2">{{ p.subtitle }}</h3>
+              <p class="text-sm">{{ p.description | slice:0:100 }}...</p>
+              <button (click)="openPopup(p)"
+                class="mt-4 px-2 py-1 border-2 border-white text-sm text-white rounded-xl shadow-md hover:bg-white hover:text-black transition-all transform hover:scale-105">
+                Know more
+              </button>
+            </div>
           </div>
         </div>
-        <div class="mt-4">
-          <label>Email</label>
-          <input [(ngModel)]="form.email" name="email" required email class="message-field" #email="ngModel" />
-          <div *ngIf="email.invalid && email.touched" class="text-red-600 text-sm mt-1">
-            <div *ngIf="email.errors?.['required']">Email is required</div>
-            <div *ngIf="email.errors?.['email']">Invalid email address</div>
-          </div>
-        </div>
-        <div class="mt-4">
-          <label>Message</label>
-          <textarea [(ngModel)]="form.message" name="message" required class="message-field" style="height: 156px;"
-            #message="ngModel"></textarea>
-          <div *ngIf="message.invalid && message.touched" class="text-red-600 text-sm mt-1">
-            Message is required
-          </div>
-        </div>
-        <div class="mt-5">
-          <button type="button"
-            class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
-            Cancel
-          </button>
-          <button type="submit" [disabled]="contactForm.invalid"
-            class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
-            Send
-          </button>
-        </div>
-      </form>
 
 
-      <!-- Get in touch  -->
-      <section class="">
-        <div class="header2 mb-8"> Get in touch </div>
-        <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
-        <div class="ml-5">
-          <a
-            href="sms:9645937117?body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20know%20a%20more.">
-            +91 9645937117
-          </a>
-        </div>
-        <i class="fa fa-light fa-location-dot mt-3 mr-2"></i> <span>Address: </span>
-        <div class="ml-6 w-3/5"> Kannur, Kerala -670693. </div>
-        <i class="fa-sharp fa-regular fa-envelope mt-3 mr-2"></i> <span>Email: </span>
-        <div class="ml-6 w-3/5 mb-3"><a
-            href="mailto:ashikch7117@gmail.com?subject=Web%20Design%20Inquiry&body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.">
-            ashikch7117@gmail.com
-          </a>
-        </div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1380.9590350240808!2d75.63607102845975!3d11.769135312403973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQ2JzEwLjAiTiA3NcKwMzgnMTIuNCJF!5e0!3m2!1sen!2sin!4v1694414979549!5m2!1sen!2sin"
-          style="border:0; border-radius:10px" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="flex gap-3">
-          <div class="mt-10" *ngFor="let icon of icons" style="font-size: 10px;">
-            <a [href]="icon.url"><i class="{{icon.icon}}"></i> </a>
+        <!-- Popup Modal -->
+        <div *ngIf="selectedProject" class="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
+          <div class="bg-white rounded-2xl shadow-xl p-6 max-w-lg w-full relative">
+            <button (click)="closePopup()"
+              class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+            <h2 class="text-2xl font-bold mb-2 text-black">{{ selectedProject.title }}</h2>
+            <h4 class="text-lg text-gray-600 mb-4">{{ selectedProject.subtitle }}</h4>
+            <div class="flex gap-2 items-center">
+              <img [src]="selectedProject.img" alt="Project image" class="w-full h-56 object-cover rounded-lg mb-4" />
+              <p class="text-gray-700 leading-relaxed">{{ selectedProject.description }}</p>
+            </div>
           </div>
+        </div>
+
+      </section>
+
+      <!-- CONTACT  -->
+      <section *ngIf="openDiv == 'Contact'">
+        <h1 class="header1 font-bold ">Contact</h1>
+        <div class="line mb-[3rem] "></div>
+
+
+        <div class=" contact-section grid grid-cols-2 ">
+          <form (ngSubmit)="sendEmail()" #contactForm="ngForm" novalidate>
+            <div class="header2">Send a message</div>
+            <div class="mt-5">
+              <label for="name">Name</label>
+              <input [(ngModel)]="form.name" name="name" required class="message-field" #name="ngModel" />
+              <div *ngIf="name.invalid && name.touched" class="text-red-600 text-sm mt-1">
+                Name is required
+              </div>
+            </div>
+            <div class="mt-4">
+              <label>Email</label>
+              <input [(ngModel)]="form.email" name="email" required email class="message-field" #email="ngModel" />
+              <div *ngIf="email.invalid && email.touched" class="text-red-600 text-sm mt-1">
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+                <div *ngIf="email.errors?.['email']">Invalid email address</div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <label>Message</label>
+              <textarea [(ngModel)]="form.message" name="message" required class="message-field" style="height: 156px;"
+                #message="ngModel"></textarea>
+              <div *ngIf="message.invalid && message.touched" class="text-red-600 text-sm mt-1">
+                Message is required
+              </div>
+            </div>
+            <div class="mt-5">
+              <button type="button"
+                class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
+                Cancel
+              </button>
+              <button type="submit" [disabled]="contactForm.invalid"
+                class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 border border-gray-700">
+                Send
+              </button>
+            </div>
+          </form>
+
+
+          <!-- Get in touch  -->
+          <section class="">
+            <div class="header2 mb-8"> Get in touch </div>
+            <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
+            <div class="ml-5">
+              <a
+                href="sms:9645937117?body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20know%20a%20more.">
+                +91 9645937117
+              </a>
+            </div>
+            <i class="fa fa-light fa-location-dot mt-3 mr-2"></i> <span>Address: </span>
+            <div class="ml-6 w-3/5"> Kannur, Kerala -670693. </div>
+            <i class="fa-sharp fa-regular fa-envelope mt-3 mr-2"></i> <span>Email: </span>
+            <div class="ml-6 w-3/5 mb-3"><a
+                href="mailto:ashikch7117@gmail.com?subject=Web%20Design%20Inquiry&body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.">
+                ashikch7117&#64;gmail.com
+              </a>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1380.9590350240808!2d75.63607102845975!3d11.769135312403973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDQ2JzEwLjAiTiA3NcKwMzgnMTIuNCJF!5e0!3m2!1sen!2sin!4v1694414979549!5m2!1sen!2sin"
+              style="border:0; border-radius:10px" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="flex gap-3">
+              <div class="mt-10" *ngFor="let icon of icons" style="font-size: 10px;">
+                <a [href]="icon.url"><i class="{{icon.icon}}"></i> </a>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </div>
-  </section>
-
+  </om-galaxy>
 </div>
