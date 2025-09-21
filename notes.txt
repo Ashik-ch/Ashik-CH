@@ -1,0 +1,15 @@
+# Project Notes: Ashik-CH Angular Website
+
+Build & Deployment
+- Build production version:     ng build --configuration production
+- Deploy to GitHub Pages:       ng deploy --base-href=/Ashik-CH/
+
+Hosted URL
+- Live site: https://ashik-ch.github.io/Ashik-CH/
+
+GitHub Repository
+- Source code: https://github.com/Ashik-ch/Ashik-CH
+ 
+
+baseHref in angular.json must be /Ashik-CH/ for correct routing.
+Always build with production configuration for optimized output.
