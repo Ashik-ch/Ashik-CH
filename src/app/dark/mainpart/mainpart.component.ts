@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TRANSLATIONS } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { network, project, skill, data, aboutMe } from '../data';
+import { network, project, skill, data, aboutMe, } from '../data';
 import { ThemeService } from 'src/app/theme.service';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import emailjs from 'emailjs-com';
+import { FormsModule } from '@angular/forms';
+import { NavComponent } from '../nav/nav.component';
 
 
 @Component({
   selector: 'app-mainpart',
   templateUrl: './mainpart.component.html',
-  styleUrls: ['./mainpart.component.scss']
+  styleUrls: ['./mainpart.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    NavComponent
+  ]
 })
 export class MainpartComponent implements OnInit {
 

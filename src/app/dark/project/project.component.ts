@@ -7,7 +7,8 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
+  standalone: false
 })
 
 export class ProjectComponent implements OnInit {
