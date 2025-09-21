@@ -5,6 +5,7 @@ import { MainpartComponent } from './mainpart/mainpart.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectComponent } from './project/project.component';
 import { FormsModule } from '@angular/forms';
+import { NgxGalaxyComponent } from '@omnedia/ngx-galaxy';
 
 /**Routes */
 const router: Routes = [
@@ -24,6 +25,7 @@ const components = [
   imports: [
     CommonModule,
     FormsModule,
+    NgxGalaxyComponent,
     CommonModule, RouterModule.forChild(router)
   ],
 
