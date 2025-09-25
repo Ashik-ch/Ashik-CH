@@ -6,7 +6,6 @@ import { CommonModule, Location } from '@angular/common';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../nav/nav.component';
-import { NgxGalaxyComponent } from '@omnedia/ngx-galaxy';
 import { NgxParticlesComponent } from '@omnedia/ngx-particles';
 
 
@@ -19,7 +18,6 @@ import { NgxParticlesComponent } from '@omnedia/ngx-particles';
     CommonModule,
     FormsModule,
     NavComponent,
-    NgxGalaxyComponent,
     NgxParticlesComponent
   ]
 })
