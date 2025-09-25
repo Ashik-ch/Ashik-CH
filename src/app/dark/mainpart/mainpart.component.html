@@ -1,7 +1,6 @@
-<div class="main-part relative overflow-hidden">
-  <om-galaxy [focal]="[0.4, 0.6]" [rotation]="[0.3, 0.7]" [starSpeed]="0.2" [density]="1.5" [hueShift]="180"
-    [disableAnimation]="true" [speed]="0.15" [glowIntensity]="0.2" [transparent]="true" [repulsionStrength]=".09"
-    class="absolute inset-0">
+<div class="main-part relative">
+  <om-particles [quantity]='200' [size]="0.7" [staticity]="200" class="absolute inset-0" [particleSpeed]="3"
+    [staticity]="50">
     <div class="relative z-10 ps-8">
       <div class="toggles">
         <div class="header">
@@ -19,7 +18,8 @@
       </div>
 
       <!-- HOME -->
-      <section *ngIf="openDiv == 'Home'" class="home">
+      @if (openDiv == 'Home') {
+      <section class="home">
         <div class="header1 font-bold">Home</div>
         <div class="line mb-[3rem] "></div>
 
@@ -35,62 +35,70 @@
               <div> Hire Me</div>
             </button>
           </div>
-
         </div>
 
       </section>
+      }
 
       <!-- RESUME -->
-      <section class="resume" *ngIf="openDiv == 'Resume'">
+      @if (openDiv == 'Resume') {
+      <section class="resume">
         <div class="header1 font-bold">Resume</div>
         <div class="line mb-[3rem] "></div>
         <div class="resume-detail grid grid-cols-2 mt-[2.75rem]">
 
           <!-- Experience & Education -->
-          <div *ngFor="let data of data">
-            <h1 class="header2 font-bold my-2">{{data.main}}</h1>
+          @for (data of data; track $index) {
+          <div>
+            <h1 class="header2 font-bold my-2">{{ data.main }}</h1>
             <div class="grid grid-cols-[auto,1fr]">
-              <div class="ver-lines"> </div>
+              <div class="ver-lines"></div>
               <div class="qualif">
-                <div class="flex flex-col mt-5" *ngFor="let list of data.items">
+                <div class="flex flex-col mt-5">
+                  @for (list of data.items; track $index) {
                   <div class="flex items-center">
                     <div class="dots"></div>
                     <div class="hor-lines inline-block mr-4"></div>
-                    <div class="title-text text-lg font-bold title">{{list.title}}</div>
+                    <div class="title-text text-lg font-bold title">{{ list.title }}</div>
                   </div>
-                  <div class="sub-title ">{{list.subtitle[0]}}</div>
-                  <div class="sub-title "><i class="fa-solid fa-location-dot"></i> {{list.subtitle[1]}}</div>
+                  <div class="sub-title ">{{ list.subtitle[0] }}</div>
+                  <div class="sub-title "> <i class="fa-solid fa-location-dot"></i> {{ list.subtitle[1] }}
+                  </div>
+                  }
                 </div>
               </div>
             </div>
           </div>
+          }
         </div>
 
         <!-- SKILL -->
         <div class="skills flex flex-col border border-base rounded rounded-xl mr-4 p-4 mt-8">
           <div class="header2 mb-4"> Skill</div>
           <div class="flex skill-set">
-            <div *ngFor="let s of skill" (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
+            @for (s of skill; track $index) {
+            <div (mouseenter)="showProgressBar = s" (mouseleave)="showProgressBar = null">
               <h1 class="skill-title">{{ s.title }}</h1>
               <div class="progress-bar mb-2" [style.width]="s.skillWidth"
                 [style.visibility]="showProgressBar === s ? 'visible' : 'hidden'">
                 <!-- {{ s.skillWidth }} -->
               </div>
             </div>
+            }
           </div>
         </div>
-
       </section>
-
+      }
 
       <!-- PORTFOLIO  -->
-      <section *ngIf="openDiv == 'Portfolio'">
+      @if (openDiv == 'Portfolio') {
+      <section>
         <h1 class="header1 font-bold">PortFolio</h1>
         <div class="line mb-[3rem]"></div>
         <!-- Portfolio Grid -->
         <div class="portfolio-container grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
-          <div *ngFor="let p of project; let i = index"
-            class="relative group rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white">
+          @for (p of project ; track $index) {
+          <div class="relative group rounded-2xl shadow-lg overflow-hidden cursor-pointer bg-white">
             <h2 class="text-center text-xl font-bold py-3 tracking-wide">
               <span class="bg-gradient-to-r from-purple-500 to-purple-900   bg-clip-text text-transparent">
                 {{ p.title }} </span>
@@ -107,11 +115,12 @@
               </button>
             </div>
           </div>
+          }
         </div>
 
-
         <!-- Popup Modal -->
-        <div *ngIf="selectedProject" class="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
+        @if (selectedProject) {
+        <div class="fixed inset-0 flex items-center justify-center bg-black/60 z-50">
           <div class="bg-white rounded-2xl shadow-xl p-6 max-w-lg w-full relative">
             <button (click)="closePopup()"
               class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
@@ -123,40 +132,46 @@
             </div>
           </div>
         </div>
-
+        }
       </section>
+      }
 
       <!-- CONTACT  -->
-      <section *ngIf="openDiv == 'Contact'">
+      @if (openDiv == 'Contact') {
+      <section>
         <h1 class="header1 font-bold ">Contact</h1>
         <div class="line mb-[3rem] "></div>
 
-
-        <div class=" contact-section grid grid-cols-2 ">
+        <div class="contact-section grid grid-cols-2 ">
           <form (ngSubmit)="sendEmail()" #contactForm="ngForm" novalidate>
             <div class="header2">Send a message</div>
             <div class="mt-5">
               <label for="name">Name</label>
               <input [(ngModel)]="form.name" name="name" required class="message-field" #name="ngModel" />
-              <div *ngIf="name.invalid && name.touched" class="text-red-600 text-sm mt-1">
+              @if (name.invalid && name.touched) {
+              <div class="text-red-600 text-sm mt-1">
                 Name is required
               </div>
+              }
             </div>
             <div class="mt-4">
               <label>Email</label>
               <input [(ngModel)]="form.email" name="email" required email class="message-field" #email="ngModel" />
-              <div *ngIf="email.invalid && email.touched" class="text-red-600 text-sm mt-1">
-                <div *ngIf="email.errors?.['required']">Email is required</div>
-                <div *ngIf="email.errors?.['email']">Invalid email address</div>
+              @if (email.invalid && email.touched) {
+              <div class="text-red-600 text-sm mt-1">
+                @if (email.errors?.['required']) { <div>Email is required</div> }
+                @if (email.errors?.['email']) { <div>Invalid email address</div> }
               </div>
+              }
             </div>
             <div class="mt-4">
               <label>Message</label>
               <textarea [(ngModel)]="form.message" name="message" required class="message-field" style="height: 156px;"
                 #message="ngModel"></textarea>
-              <div *ngIf="message.invalid && message.touched" class="text-red-600 text-sm mt-1">
+              @if (message.invalid && message.touched) { <div class="text-red-600 text-sm mt-1">
                 Message is required
               </div>
+              }
             </div>
             <div class="mt-5">
               <button type="button"
@@ -194,13 +209,16 @@
               style="border:0; border-radius:10px" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="flex gap-3">
-              <div class="mt-10" *ngFor="let icon of icons" style="font-size: 10px;">
+              |@for (icon of icons; track $index) {
+              <div class="mt-10" style="font-size: 10px;">
                 <a [href]="icon.url"><i class="{{icon.icon}}"></i> </a>
               </div>
+              }
             </div>
           </section>
         </div>
       </section>
+      }
     </div>
-  </om-galaxy>
+  </om-particles>
 </div>
