@@ -92,7 +92,7 @@
 
       <!-- PORTFOLIO  -->
       @if (openDiv == 'Portfolio') {
-      <section>
+      <section class="pb-1">
         <h1 class="header1 font-bold">PortFolio</h1>
         <div class="line mb-[3rem]"></div>
         <!-- Portfolio Grid -->
@@ -187,21 +187,31 @@
 
 
           <!-- Get in touch  -->
-          <section class="">
-            <div class="header2 mb-8"> Get in touch </div>
-            <i class="fa fa-light fa-mobile mt-3 mr-2"></i> <span>Phone: </span>
-            <div class="ml-5">
-              <a
-                href="sms:9645937117?body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20know%20a%20more.">
+          <section>
+            <div class="header2 mb-8">Get in touch</div>
+            <div class="flex items-center mt-3">
+              <i class="fa-solid fa-mobile mr-2"></i>
+              <span class="mr-2">Phone:</span>
+              <a href="sms:9645937117?body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20know%20more."
+                class="ml-2"> +971 557935653 </a>
+            </div>
+            <div class="flex items-center mt-3">
+              <i class="fa-brands fa-whatsapp mr-2"></i>
+              <span class="mr-2">Whatsapp:</span>
+              <a href="https://wa.me/919645937117" target="_blank" class="ml-2">
                 +91 9645937117
               </a>
             </div>
-            <i class="fa fa-light fa-location-dot mt-3 mr-2"></i> <span>Address: </span>
-            <div class="ml-6 w-3/5"> Kannur, Kerala -670693. </div>
-            <i class="fa-sharp fa-regular fa-envelope mt-3 mr-2"></i> <span>Email: </span>
-            <div class="ml-6 w-3/5 mb-3"><a
-                href="mailto:ashikch7117@gmail.com?subject=Web%20Design%20Inquiry&body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project.">
-                ashikch7117&#64;gmail.com
+            <div class="flex items-center mt-3">
+              <i class="fa-solid fa-location-dot mr-2"></i>
+              <span class="mr-2">Address:</span>
+              <div class="ml-2 w-3/5">BurDubai, Dubai - UAE.</div>
+            </div>
+            <div class="flex items-center mt-3 mb-3">
+              <i class="fa-regular fa-envelope mr-2"></i>
+              <span class="mr-2">Email:</span>
+              <a href="mailto:ashikch7117@gmail.com?subject=Web%20Design%20Inquiry&body=Hi%2C%20I%20saw%20your%20web%20design%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20project."
+                class="ml-2"> ashikch7117@gmail.com
               </a>
             </div>
             <iframe
@@ -209,7 +219,7 @@
               style="border:0; border-radius:10px" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="flex gap-3">
-              |@for (icon of icons; track $index) {
+              @for (icon of icons; track $index) {
               <div class="mt-10" style="font-size: 10px;">
                 <a [href]="icon.url"><i class="{{icon.icon}}"></i> </a>
               </div>

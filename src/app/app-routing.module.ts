@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DarkModule } from './dark/dark.module';
-import { MainpartComponent } from './dark/mainpart/mainpart.component';
 
 const routes: Routes = [
   {
