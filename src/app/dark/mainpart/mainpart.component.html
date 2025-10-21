@@ -4,14 +4,15 @@
     <div class="relative z-10 ps-8">
       <div class="toggles">
         <div class="header">
-          <input type="checkbox" id="darkmode-toggle" (click)="toggleTheme()" />
+          <input type="checkbox" id="darkmode-toggle" [checked]="currentTheme === 'dark'" (change)="toggleTheme()" />
           <label for="darkmode-toggle">
             <div class="toggle-icon">
               <i class="fa-solid fa-moon fa-sm"></i>
-              <i class="far fa-sun fa-xs"></i>
+              <i class="fa-regular fa-sun fa-xs"></i>
             </div>
           </label>
         </div>
+
         <div class="flex justify-end">
           <app-nav (clickValue)="showDiv($event)"></app-nav>
         </div>

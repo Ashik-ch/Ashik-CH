@@ -23,49 +23,61 @@ import { NgxParticlesComponent } from '@omnedia/ngx-particles';
 })
 export class MainpartComponent implements OnInit {
 
-
   icons = network;
-  project = project
-  skill = skill
+  project = project;
+  skill = skill;
   data = data;
   aboutMe = aboutMe;
 
   showProgressBar: any;
   openDiv = 'Home';
-  currentTheme: 'dark' | 'light';
-  newTheme: 'dark' | 'light';
+  currentTheme: 'dark' | 'light' = 'dark';
+  newTheme: 'dark' | 'light' = 'light';
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private themeService: ThemeService,
     private location: Location,
-    private route: ActivatedRoute) {
-    this.currentTheme = this.themeService.getCurrentTheme();
-    this.newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
-  }
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.previousPage()
+    this.initializeTheme();
+    this.previousPage();
   }
 
   /**
-   * @description values of .....
-   * @param val 
+   * @description Sets the initial theme (dark mode by default)
+   */
+  initializeTheme() {
+    const savedTheme = this.themeService.getCurrentTheme();
+    if (savedTheme) {
+      this.currentTheme = savedTheme;
+    } else {
+      this.themeService.setTheme('dark');
+    }
+    this.newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+  }
+
+
+  /**
+   * @description Handles navigation between sections
    */
   showDiv(val: string) {
     this.openDiv = val;
     this.router.navigate([], {
       queryParams: { section: val },
-      queryParamsHandling: 'merge'
-    })
+      queryParamsHandling: 'merge',
+    });
   }
 
   /**
-   * @description for navigation previous page
+   * @description Handles restoring section from URL (previous page)
    */
   previousPage() {
     this.location.subscribe((event) => {
       const sectionParam = new URLSearchParams(event.url).get('section');
-      this.openDiv = sectionParam || '';
+      this.openDiv = sectionParam || 'Home';
     });
     this.openDiv = this.route.snapshot.queryParamMap.get('section') || 'Home';
   }
